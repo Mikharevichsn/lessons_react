@@ -1,6 +1,11 @@
+import Counter from "./Counter";
+
+
 const App = () => {
   return (
-    <div>123</div>
+    <div>
+      <Counter />
+    </div>
   );
 }
 
