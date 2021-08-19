@@ -1,25 +1,35 @@
 import React, { useEffect, useState } from 'react';
+import { AddTask } from './AddTask';
 import { Header } from './Header';
 import { List } from './List';
 
 export const Main = () => {
   const [taskList, setTaskList] = useState(null);
-  console.log('🚀 ~ file: Main.jsx ~ line 6 ~ Main ~ taskList', taskList);
 
   useEffect(() => {
-    const data = [
-      { text: 'Купить молоко' },
-      { text: 'Сделать уборку' },
-      { text: 'Выучить реакт' },
-    ];
-
-    setTaskList([...data]);
+    try {
+      const data = JSON.parse(localStorage.getItem('tasks'));
+      console.log('🚀 ~ file: Main.jsx ~ line 13 ~ useEffect ~ data', data);
+      if (!data) {
+        setTaskList([]);
+        return;
+      }
+      setTaskList([...data]);
+    } catch (err) {
+      console.log(err);
+      setTaskList([]);
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(taskList));
+  }, [taskList]);
 
   return (
     <div>
       <Header title='Список задач' />
       <List list={taskList} />
+      <AddTask taskList={taskList} setTaskList={setTaskList} />
     </div>
   );
 };
