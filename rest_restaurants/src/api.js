@@ -34,8 +34,8 @@ export const api = {
   async post(bodyData) {
     return await this.request('POST', null, bodyData);
   },
-  async put(bodyData) {
-    return await this.request('PUT', null, bodyData);
+  async put(id, bodyData) {
+    return await this.request('PUT', `${this.url}/${id}`, bodyData);
   },
   async delete(id) {
     return await this.request('DELETE', `${this.url}/${id}`  );

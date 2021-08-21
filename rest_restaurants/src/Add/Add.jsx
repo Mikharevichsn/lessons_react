@@ -3,10 +3,11 @@ import { api } from '../api';
 
 export const Add = ({ setRestaurants }) => {
   const [isFormShown, setIsFormShown] = useState(false);
-  const [restInstance, setRestInstance] = useState({
+  const defaultResInstance = {
     name: '',
     description: '',
-  });
+  };
+  const [restInstance, setRestInstance] = useState(defaultResInstance);
 
   const onChange = (e) => {
     setRestInstance({
@@ -21,7 +22,11 @@ export const Add = ({ setRestaurants }) => {
     if (!restInstance.name) return alert('Имя - обязательно!');
 
     const fetchResult = await api.post(restInstance);
-    if (fetchResult.success) setRestaurants(state => ([ ...state, { ...restInstance } ]));
+    if (fetchResult.success) {
+      setRestaurants(state => ([ ...state, { id: fetchResult.data.id, ...restInstance } ]));
+      setRestInstance(defaultResInstance);
+      setIsFormShown(false);
+    }
 
   }
   return (
