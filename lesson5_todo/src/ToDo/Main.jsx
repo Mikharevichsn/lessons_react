@@ -28,8 +28,8 @@ export const Main = () => {
   return (
     <div>
       <Header title='Список задач' />
-      <List list={taskList} />
       <AddTask taskList={taskList} setTaskList={setTaskList} />
+      <List list={taskList} setList={setTaskList}  />
     </div>
   );
 };

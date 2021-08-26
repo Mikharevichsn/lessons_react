@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 export const AddTask = ({ taskList, setTaskList }) => {
   const [inputText, setInputText] = useState('');
@@ -19,7 +20,7 @@ export const AddTask = ({ taskList, setTaskList }) => {
 
           setTaskList((prevState) => [
             ...prevState,
-            { text: inputText, isDone: false },
+            { id: uuidv4(), text: inputText, isDone: false },
           ]);
           setInputText('');
         }}
