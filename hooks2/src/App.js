@@ -1,9 +1,10 @@
-
+import RefExample from './RefExample';
 
 function App() {
+
   return (
-    <div className="App">
-      123
+    <div>
+      <RefExample />
     </div>
   );
 }
