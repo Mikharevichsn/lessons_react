@@ -1,0 +1,35 @@
+.layout {
+  &.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  .header {
+    font-size: 30px;
+    background-color: beige;
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .main-wrapper {
+    display: flex;
+    flex-grow: 1;
+
+    .aside {
+      background-color: cadetblue;
+      width: 300px;
+    }
+
+    .main {
+      flex-grow: 1;
+      padding: 10px 30px;
+    }
+  }
+
+  .footer {
+    background-color: cornflowerblue;
+  }
+
+}
