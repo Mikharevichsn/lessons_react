@@ -1,5 +1,5 @@
-import React, { useEffect, useState, lazy, Suspense } from 'react'
-import { CommentsList } from './CommentsList'
+import React, { useEffect, useState, lazy, Suspense } from 'react';
+import { CommentsList } from './CommentsList';
 import fakeComments from './fakeComments';
 import './BlogComments.scss';
 
@@ -12,13 +12,12 @@ export const BlogComments = () => {
     setList(fakeComments);
   }, []);
 
-
   return (
     <div>
-      <CommentsList className="article-comments" list={list} />
+      <CommentsList className='article-comments' list={list} />
       <Suspense fallback={<div>Загрузка...</div>}>
         <AddComment setList={setList} />
       </Suspense>
     </div>
-  )
-}
+  );
+};

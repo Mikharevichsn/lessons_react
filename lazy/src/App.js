@@ -3,7 +3,7 @@ import { BlogPost } from './BlogPost';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <BlogPost />
     </div>
   );
