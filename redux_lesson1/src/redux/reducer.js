@@ -3,17 +3,11 @@ import { ADD_TASK, DELETE_TASK, LOGIN, LOGOUT } from './actionTypes';
 export const reducer = (state, action) => {
   switch (action.type) {
     case ADD_TASK:
-      if (action.payload?.title) {
         return {
           ...state,
           tasks: [...state.tasks, action.payload],
-          error: null,
         };
-      }
-      return {
-        ...state,
-        error: 'Ошибка! Что-то не так с таской!',
-      };
+     
 
     case DELETE_TASK:
       return {

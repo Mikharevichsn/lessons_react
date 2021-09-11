@@ -1,0 +1,17 @@
+.cart {
+  width: 400px;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid #000;
+
+  &-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
