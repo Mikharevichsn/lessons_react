@@ -1,9 +1,10 @@
-import { createAction } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchCharacters = () => async (dispatch) => {
-  const response = await fetch('https://rickandmortyapi.com/api/character');
-  const result = await response.json();
-  dispatch(getAllCharacters(result.results));
-};
-
-export const getAllCharacters = createAction('GET_ALL_CHARACTERS');
+export const getAllCharacters = createAsyncThunk(
+  'GET_ALL_CHARACTERS',
+  async () => {
+    const response = await fetch('https://rickandmortyapi.com/api/character');
+    const result = await response.json();
+    return result.results;
+  }
+);
