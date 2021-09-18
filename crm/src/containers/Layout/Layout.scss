@@ -1,0 +1,19 @@
+.header {
+  // min-height: 100px;
+  background-color: beige;
+  padding: 10px 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.left {
+  width: 350px;
+  background-color: #cae2f9;
+}

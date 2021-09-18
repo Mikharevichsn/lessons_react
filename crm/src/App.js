@@ -1,12 +1,11 @@
 import { Switch, Route } from 'react-router-dom';
-import { Menu } from './containers/Menu/Menu';
-import { asideMenuLinks } from './constants';
+import { Layout } from './containers/Layout';
+import './App.scss';
 
 function App() {
   return (
     <>
-      <div className='App'>
-        <Menu links={asideMenuLinks} />
+      <Layout>
         <Switch>
           <Route exact path='/'>
             <h1>Главная</h1>
@@ -15,7 +14,7 @@ function App() {
             <h1>Список заявок</h1>
           </Route>
         </Switch>
-      </div>
+      </Layout>
     </>
   );
 }
