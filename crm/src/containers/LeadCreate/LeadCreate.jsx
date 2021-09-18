@@ -1,13 +1,19 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import shortid from 'shortid';
+import { useHistory } from 'react-router';
+import { addLead } from '../../redux/actions';
 
 export const LeadCreate = () => {
-  const [formData, setFormData] = useState({
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const getInitFormData = () => ({
     id: shortid.generate(),
     name: '',
     goods: '',
     cost: '',
   });
+  const [formData, setFormData] = useState(getInitFormData());
 
   const onChange = (event) => {
     setFormData({
@@ -18,7 +24,9 @@ export const LeadCreate = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log('formData = ', formData);
+    dispatch(addLead(formData));
+    setFormData(getInitFormData());
+    history.push('./leads');
   };
 
   return (
