@@ -8,4 +8,8 @@ export const asideMenuLinks = [
     path: '/leads',
     name: 'Лиды',
   },
+  {
+    path: '/leads/create',
+    name: 'Добавить заявку',
+  },
 ];

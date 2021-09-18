@@ -6,7 +6,7 @@ export const Menu = ({ links = [] }) => {
       <nav>
         <ul>
           {links.map((link) => (
-            <li>
+            <li key={link.name}>
               <NavLink
                 exact={link.exact}
                 to={link.path}
