@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import shortid from 'shortid';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { addLead } from '../../redux/actions';
 
 export const LeadCreate = () => {
@@ -36,8 +36,8 @@ export const LeadCreate = () => {
         <label>
           Название
           <input
-            type='text'
-            name='name'
+            type="text"
+            name="name"
             value={formData.name}
             onChange={onChange}
             required
@@ -46,8 +46,8 @@ export const LeadCreate = () => {
         <label>
           Товары
           <input
-            type='text'
-            name='goods'
+            type="text"
+            name="goods"
             value={formData.goods}
             onChange={onChange}
             required
@@ -56,14 +56,14 @@ export const LeadCreate = () => {
         <label>
           Сумма
           <input
-            type='text'
-            name='cost'
+            type="text"
+            name="cost"
             value={formData.cost}
             onChange={onChange}
             required
           />
         </label>
-        <button type='submit'>Создать</button>
+        <button type="submit">Создать</button>
       </form>
     </div>
   );

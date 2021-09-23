@@ -12,4 +12,8 @@ export const asideMenuLinks = [
     path: '/leads/create',
     name: 'Добавить заявку',
   },
+  {
+    path: '/login',
+    name: 'Авторизация',
+  },
 ];

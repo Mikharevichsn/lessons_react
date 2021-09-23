@@ -1,27 +1,27 @@
 import { useSelector } from 'react-redux';
+// import { Table } from 'antd';
 import { getLeads } from '../../redux/selectors';
 import 'antd/dist/antd.css';
-import { Table } from 'antd';
 import './LeadsList.scss';
 
 export const LeadsList = () => {
   const leads = useSelector(getLeads);
 
-  const columns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-    },
-    {
-      title: 'Товары',
-      dataIndex: 'goods',
-    },
-    {
-      title: 'Сумма по заявке',
-      dataIndex: 'cost',
-      sorter: (a, b) => Number(a.cost) - Number(b.cost),
-    },
-  ];
+  // const columns = [
+  //   {
+  //     title: 'Name',
+  //     dataIndex: 'name',
+  //   },
+  //   {
+  //     title: 'Товары',
+  //     dataIndex: 'goods',
+  //   },
+  //   {
+  //     title: 'Сумма по заявке',
+  //     dataIndex: 'cost',
+  //     sorter: (a, b) => Number(a.cost) - Number(b.cost),
+  //   },
+  // ];
 
   return (
     <div>
@@ -46,11 +46,11 @@ export const LeadsList = () => {
         </tbody>
       </table>
       <br />
-      <Table
+      {/* <Table
         rowKey={(record) => record.id}
         columns={columns}
         dataSource={leads}
-      />
+      /> */}
     </div>
   );
 };
