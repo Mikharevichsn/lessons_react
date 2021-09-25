@@ -1,21 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { login } from '../../redux/actions';
 
 export const LoginForm = () => {
-  const history = useHistory();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
   const [loginData, setLoginData] = useState({
     login: '',
     password: '',
   });
-
-  useEffect(() => {
-    if (user) history.push('/');
-  }, [user]);
 
   const onChange = (event) => {
     setLoginData({
