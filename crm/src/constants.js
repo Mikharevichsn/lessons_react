@@ -1,4 +1,11 @@
-export const asideMenuLinks = [
+export const asideMenuLinksNoUser = [
+  {
+    path: '/login',
+    name: 'Авторизация',
+  },
+];
+
+export const asideMenuLinksUser = [
   {
     path: '/',
     exact: true,
@@ -11,10 +18,6 @@ export const asideMenuLinks = [
   {
     path: '/leads/create',
     name: 'Добавить заявку',
-  },
-  {
-    path: '/login',
-    name: 'Авторизация',
   },
   {
     path: '/login2',

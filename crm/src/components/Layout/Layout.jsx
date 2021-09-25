@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Menu } from '../Menu';
-import { asideMenuLinks } from '../../constants';
+import { asideMenuLinksUser, asideMenuLinksNoUser } from '../../constants';
 import './Layout.scss';
 import { User } from '../User/User';
 
@@ -15,7 +15,7 @@ export const Layout = ({ children }) => {
       </header>
       <section className="main-wrapper">
         <aside className="left">
-          <Menu links={asideMenuLinks} />
+          <Menu links={user ? asideMenuLinksUser : asideMenuLinksNoUser} />
         </aside>
         <main>{children}</main>
       </section>
