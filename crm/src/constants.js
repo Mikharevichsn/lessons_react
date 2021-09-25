@@ -16,4 +16,8 @@ export const asideMenuLinks = [
     path: '/login',
     name: 'Авторизация',
   },
+  {
+    path: '/login2',
+    name: 'Авторизация без редиректа',
+  },
 ];

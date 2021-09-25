@@ -3,7 +3,8 @@ import { Layout } from './components/Layout';
 import { LeadCreate } from './components/LeadCreate';
 import './App.scss';
 import { LeadsList } from './components/LeadsList/LeadsList';
-import { LoginForm } from './components/LoginForm/LoginForm';
+import { LoginForm } from './components/LoginForm';
+import { LoginFormNoRedirect } from './components/LoginFormNoRedirect';
 import { PrivateRoute } from './components/PrivateRoute';
 import { PublicRoute } from './components/PublicRoute';
 
@@ -20,6 +21,10 @@ function App() {
 
           <PublicRoute path="/login" needRedirect>
             <LoginForm />
+          </PublicRoute>
+
+          <PublicRoute path="/login2">
+            <LoginFormNoRedirect />
           </PublicRoute>
 
           <PrivateRoute path="/leads/create">
